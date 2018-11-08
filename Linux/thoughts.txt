@@ -1,0 +1,2 @@
+would be cool to not need to enter size, like first 16 dct swaps are dedicated to the
+message size or something

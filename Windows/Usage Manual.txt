@@ -1,0 +1,31 @@
+How to run:
+	1. Navigate to executable directory via command prompt.
+	2. See below for usage.
+
+Usage examples:
+	Hide:	
+		$ DCTSwap2.exe -i [cover fileName] -h [message file] 
+	optionally set hide level:
+		$ DCTSwap2.exe -i [cover fileName] -h [message file] -l [hiding level]
+
+	Extract:
+		$ DCTSwap2.exe -i [cover fileName] -e
+	optionally set hide level:
+		$ DCTSwap2.exe -i [cover fileName] -e -l [hiding level]
+
+	NOTE:	The extraction needs to have the same hiding level as the hide used.
+		By default, it's set to 20.
+
+	Hiding level range: 1-32
+
+About the extraction process:
+
+	Currently the code ours is built upon embeds some null bytes in the beginning of the 
+	message buffer along with the file name. The extraction does not handle this. Because 
+	of this, it is recommended you use .txt files to hide in order to verify the 
+	extraction process works correctly.
+
+	To further justify this, the length of the message was not inserted into the hiding
+	code, so the extraction process will continue to extact indiscriminately until the 
+	end of file. Thus, if the entire capacity was not utilized, garbage will be appended
+	to the end of the extracted file.
